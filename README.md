@@ -100,7 +100,9 @@ The `review` column can be made MAR by introducing another column in the datafra
 
 #### Calories and Rating
 **Null Hypothesis:** There is no difference between the mean calories of recipes with missing ratings and those with ratings 
+
 **Alternate Hypothesis:** There is a difference between the mean calories of recipes with and without ratings.
+
 **Test Statistic:** Absolute difference in the mean calories of the two groups. We choose this test statistic because `calories` and `ratings` are both numerical variables
 
 The selective dataframe in use has a `rating_missing` column to help conduct the test:
