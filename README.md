@@ -95,3 +95,51 @@ The following line plot shows the trend in number of recipes and average calorie
 ### NMAR analysis
 For the NMAR analysis, I looked at the missing values in the `review` column in the merged dataframe. This column is likely NMAR because the the reviews are likely missing due to the value itself. People leave a review for the recipe either because they loved it and want to express gratitude or praise for the shared recipe or they hated it as it didn't turn out the way they expected it too. In most cases, people remain unaffected by the recipe and do not bother giving it a review. This makes the `review` it NMAR.
 The `review` column can be made MAR by introducing another column in the dataframe that is indicative of a person's happiness with a smiley or frown face or a neutral emoji that can can tell why the person did not review the recipe. This would make it MAR.
+
+### Misingness Dependency
+
+#### Calories and Rating
+**Null Hypothesis:** There is no difference between the mean calories of recipes with missing ratings and those with ratings 
+**Alternate Hypothesis:** There is a difference between the mean calories of recipes with and without ratings.
+**Test Statistic:** Absolute difference in the mean calories of the two groups. We choose this test statistic because `calories` and `ratings` are both numerical variables
+
+The selective dataframe in use has a `rating_missing` column to help conduct the test:
+|   calories |   rating | rating_missing   |
+|-----------:|---------:|:-----------------|
+|      138.4 |        4 | False            |
+|      595.1 |        5 | False            |
+|      194.8 |        5 | False            |
+|      194.8 |        5 | False            |
+|      194.8 |        5 | False            |
+
+The distribution of `calories` when `rating` is missing and when `rating` is present appears to be skewed to the right
+<iframe src="assets/cr1.html" width=800 height=600 frameBorder=0></iframe>
+
+We perform a permutation test by randomly shuffling the `rating_missing` column a 1000 times and also record the observed test statistic (marked in the red line) which is 69.01
+<iframe src="assets/cr2.html" width=800 height=600 frameBorder=0></iframe>
+
+The p-value from this test was nearly 0.0 which means that we __reject the null hypothesis__ and conclude that missingness of `ratings` __depends__ on `calories`
+
+#### Minutes and Rating
+**Null Hypothesis:** There is no difference between the mean minutes of recipes with missing ratings and those with ratings 
+**Alternate Hypothesis:** There is a difference between the mean minutes of recipes with and without ratings.
+**Test Statistic:** Absolute difference in the mean minutes of the two groups. We choose this test statistic because `minutes` and `ratings` are both numerical variables
+
+The selective dataframe in use has a `rating_missing` column to help conduct the test:
+|   minutes |   rating | rating_missing   |
+|----------:|---------:|:-----------------|
+|        40 |        4 | False            |
+|        45 |        5 | False            |
+|        40 |        5 | False            |
+|        40 |        5 | False            |
+|        40 |        5 | False            |
+
+The distribution of `minutes` when `rating` is missing and when `rating` is present appears to be skewed to the right
+<iframe src="assets/mr1.html" width=800 height=600 frameBorder=0></iframe>
+
+We perform a permutation test by randomly shuffling the `rating_missing` column a 1000 times and also record the observed test statistic (marked in the red line) which is 51.45
+<iframe src="assets/mr2.html" width=800 height=600 frameBorder=0></iframe>
+
+The p-value from this test was 0.102 which means that we __fail to reject the null hypothesis__ and conclude that missingness of `ratings` __does not depend__ on `calories`
+
+## Hypothesis Test
