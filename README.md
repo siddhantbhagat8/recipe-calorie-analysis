@@ -99,9 +99,11 @@ The `review` column can be made MAR by introducing another column in the datafra
 ### Misingness Dependency
 
 #### Calories and Rating
-**Null Hypothesis:** There is no difference between the mean calories of recipes with missing ratings and those with ratings 
+**Null Hypothesis:** There is no difference between the mean calories of recipes with missing ratings and those with ratings.
+
 **Alternate Hypothesis:** There is a difference between the mean calories of recipes with and without ratings.
-**Test Statistic:** Absolute difference in the mean calories of the two groups. We choose this test statistic because `calories` and `ratings` are both numerical variables
+
+**Test Statistic:** Absolute difference in the mean calories of the two groups. We choose this test statistic because `calories` and `ratings` are both numerical variables.
 
 The selective dataframe in use has a `rating_missing` column to help conduct the test:
 
@@ -122,9 +124,11 @@ We perform a permutation test by randomly shuffling the `rating_missing` column 
 The p-value from this test was nearly 0.0 which means that we __reject the null hypothesis__ and conclude that missingness of `ratings` __depends__ on `calories`
 
 #### Minutes and Rating
-**Null Hypothesis:** There is no difference between the mean minutes of recipes with missing ratings and those with ratings 
+**Null Hypothesis:** There is no difference between the mean minutes of recipes with missing ratings and those with ratings.
+
 **Alternate Hypothesis:** There is a difference between the mean minutes of recipes with and without ratings.
-**Test Statistic:** Absolute difference in the mean minutes of the two groups. We choose this test statistic because `minutes` and `ratings` are both numerical variables
+
+**Test Statistic:** Absolute difference in the mean minutes of the two groups. We choose this test statistic because `minutes` and `ratings` are both numerical variables.
 
 The selective dataframe in use has a `rating_missing` column to help conduct the test:
 
