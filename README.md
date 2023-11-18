@@ -40,3 +40,10 @@ First few rows of `recipes` dataset with important columns:
 | 306168 |               9 |      194.8 | False            | 2008-05-30 00:00:00 |
 | 286009 |               7 |      878.3 | False            | 2008-02-12 00:00:00 |
 | 475785 |              13 |      267   | True             | 2012-03-06 00:00:00 |
+
+## Univariate Analysis
+The following is the distribution of the number of ingredients across all recipes. The distribution appears to be roughly unimodal, peaking at 8 ingredients, suggesting that most of the recipes contain ingredients within this range. Thereafter, the count of recipes gradually decreases as the number of ingredients increases, showing that recipes with a very high number of ingredients are less common. The plot also appears to be right skewed
+<iframe src="assets/dist_n_ingr.html" width=800 height=600 frameBorder=0></iframe>
+
+The following is the distribution of the number of calories in a collection of recipes. The x-axis has been restricted to 4000 calories to eliminate extreme outliers in the dataset. The distribution shows a right-skewed pattern, indicating that most recipes have a lower calorie count, with the frequency decreasing as the calorie count increases. This suggests that recipes with very high-calorie counts are less common. The majority of the recipes seem to cluster under 500 calories and peak between 150-169.9 calories, which may indicate a tendency towards lighter or more health-conscious recipes in the dataset.
+<iframe src="assets/dist_calories.html" width=800 height=600 frameBorder=0></iframe>
