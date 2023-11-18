@@ -89,3 +89,9 @@ This pivot table shows the trend of average calories per the number of ingredien
 
 The following line plot shows the trend in number of recipes and average calories per number of ingredients
 <iframe src="assets/grouped_ingr.html" width=800 height=600 frameBorder=0></iframe>
+
+## Assessment of Missingness
+
+### NMAR analysis
+For the NMAR analysis, I looked at the missing values in the `review` column in the merged dataframe. This column is likely NMAR because the the reviews are likely missing due to the value itself. People leave a review for the recipe either because they loved it and want to express gratitude or praise for the shared recipe or they hated it as it didn't turn out the way they expected it too. In most cases, people remain unaffected by the recipe and do not bother giving it a review. This makes the `review` it NMAR.
+The `review` column can be made MAR by introducing another column in the dataframe that is indicative of a person's happiness with a smiley or frown face or a neutral emoji that can can tell why the person did not review the recipe. This would make it MAR.
