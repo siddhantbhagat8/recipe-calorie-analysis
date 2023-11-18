@@ -30,7 +30,7 @@ First few rows of the `merged` dataset with important columns:
 | 412 broccoli casserole               | 306168 |               9 |         6 | [194.8, 20.0, 6.0, 32.0, 22.0, 36.0, 3.0]    | ['frozen broccoli cuts', 'cream of chicken soup', 'sharp cheddar cheese', 'garlic powder', 'ground black pepper', 'salt', 'milk', 'soy sauce', 'french-fried onions']          | 2008-05-30 00:00:00 |        5 |
 First few rows of `recipes` dataset with important columns:
 |     id |   n_ingredients |   calories | ingr_intensive   | submitted           |
-|-------:|----------------:|-----------:|:-----------------|:--------------------|
+|--------|-----------------|------------|------------------|---------------------|
 | 333281 |               9 |      138.4 | False            | 2008-10-27 00:00:00 |
 | 453467 |              11 |      595.1 | False            | 2011-04-11 00:00:00 |
 | 306168 |               9 |      194.8 | False            | 2008-05-30 00:00:00 |
