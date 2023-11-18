@@ -20,15 +20,19 @@ The following steps were taken to clean the above two datasets for exploratory a
 4. Added a column `calories` to the `recipes` dataset by extracting the calories from the column `nutrition` which contained many values
 5. Changed the type of `submitted` from `object` to `datetime` to better represent the date and access the years for future use. Did the same for the `submitted` column in the `merged` dataset
 6. Added a column `ingr_intensive` to the `recipes dataframe` if `n_ingredients` is greater than 12 or not
+
 First few rows of the `merged` dataset with important columns:
+
 | name                                 |     id |   n_ingredients |   n_steps | nutrition                                    | ingredients                                                                                                                                                                    | submitted           |   rating |
-|:-------------------------------------|-------:|----------------:|----------:|:---------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------|---------:|
+|--------------------------------------|--------|-----------------|-----------|----------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|----------|
 | 1 brownies in the world    best ever | 333281 |               9 |        10 | [138.4, 10.0, 50.0, 3.0, 3.0, 19.0, 6.0]     | ['bittersweet chocolate', 'unsalted butter', 'eggs', 'granulated sugar', 'unsweetened cocoa powder', 'vanilla extract', 'brewed espresso', 'kosher salt', 'all-purpose flour'] | 2008-10-27 00:00:00 |        4 |
 | 1 in canada chocolate chip cookies   | 453467 |              11 |        12 | [595.1, 46.0, 211.0, 22.0, 13.0, 51.0, 26.0] | ['white sugar', 'brown sugar', 'salt', 'margarine', 'eggs', 'vanilla', 'water', 'all-purpose flour', 'whole wheat flour', 'baking soda', 'chocolate chips']                    | 2011-04-11 00:00:00 |        5 |
 | 412 broccoli casserole               | 306168 |               9 |         6 | [194.8, 20.0, 6.0, 32.0, 22.0, 36.0, 3.0]    | ['frozen broccoli cuts', 'cream of chicken soup', 'sharp cheddar cheese', 'garlic powder', 'ground black pepper', 'salt', 'milk', 'soy sauce', 'french-fried onions']          | 2008-05-30 00:00:00 |        5 |
 | 412 broccoli casserole               | 306168 |               9 |         6 | [194.8, 20.0, 6.0, 32.0, 22.0, 36.0, 3.0]    | ['frozen broccoli cuts', 'cream of chicken soup', 'sharp cheddar cheese', 'garlic powder', 'ground black pepper', 'salt', 'milk', 'soy sauce', 'french-fried onions']          | 2008-05-30 00:00:00 |        5 |
 | 412 broccoli casserole               | 306168 |               9 |         6 | [194.8, 20.0, 6.0, 32.0, 22.0, 36.0, 3.0]    | ['frozen broccoli cuts', 'cream of chicken soup', 'sharp cheddar cheese', 'garlic powder', 'ground black pepper', 'salt', 'milk', 'soy sauce', 'french-fried onions']          | 2008-05-30 00:00:00 |        5 |
+
 First few rows of `recipes` dataset with important columns:
+
 |     id |   n_ingredients |   calories | ingr_intensive   | submitted           |
 |--------|-----------------|------------|------------------|---------------------|
 | 333281 |               9 |      138.4 | False            | 2008-10-27 00:00:00 |
