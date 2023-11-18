@@ -121,7 +121,7 @@ The distribution of `calories` when `rating` is missing and when `rating` is pre
 We perform a permutation test by randomly shuffling the `rating_missing` column a 1000 times and also record the observed test statistic (marked in the red line) which is 69.01
 <iframe src="assets/cr2.html" width=800 height=600 frameBorder=0></iframe>
 
-The p-value from this test was nearly 0.0 which means that we __reject the null hypothesis__ and conclude that missingness of `ratings` __depends__ on `calories`
+The p-value from this test was nearly 0.0 and a significane level of 0.05, which means that we __reject the null hypothesis__ and conclude that missingness of `ratings` __depends__ on `calories`
 
 #### Minutes and Rating
 **Null Hypothesis:** There is no difference between the mean minutes of recipes with missing ratings and those with ratings.
@@ -146,6 +146,31 @@ The distribution of `minutes` when `rating` is missing and when `rating` is pres
 We perform a permutation test by randomly shuffling the `rating_missing` column a 1000 times and also record the observed test statistic (marked in the red line) which is 51.45
 <iframe src="assets/mr2.html" width=800 height=600 frameBorder=0></iframe>
 
-The p-value from this test was 0.102 which means that we __fail to reject the null hypothesis__ and conclude that missingness of `ratings` __does not depend__ on `calories`
+The p-value from this test was 0.102 and a significane level of 0.05, which means that we __fail to reject the null hypothesis__ and conclude that missingness of `ratings` __does not depend__ on `calories`
 
 ## Hypothesis Test
+**Null Hypothesis:** Ingredient intensive recipes have roughly the same calories as recipes that require less ingredients
+
+**Alternate Hypothesis:** Ingredient intensive recipes tend to have more calories than recipes that require less ingredients
+
+**Test Statistic:** Absolute difference in the mean ingredients of the two groups. We choose this test statistic becuase of the distribution of `n_ingredients` and `calories` shown in the univariate analysis section as well as the plot that will follow shortly. We choose a significance level of 0.05
+
+For the purpose of our test, we define a recipe to be **ingredient intensive** if the number of ingredients is **greater than 12** for a given recipe. The dataset in use for the test is as follows:
+
+|     id |   n_ingredients |   calories | ingr_intensive   |
+|-------:|----------------:|-----------:|:-----------------|
+| 333281 |               9 |      138.4 | False            |
+| 453467 |              11 |      595.1 | False            |
+| 306168 |               9 |      194.8 | False            |
+| 286009 |               7 |      878.3 | False            |
+| 475785 |              13 |      267   | True             |
+
+The distribution of `calories` and `n_ingredients` is as follows means of the groups appear very different from each other
+<iframe src="assets/ht1.html" width=800 height=600 frameBorder=0></iframe>
+
+We perform a permutation test by randomly shuffling the `ingr_intensive` column a 1000 times and also record the observed test statistic (marked in the red line) which is 152.36
+<iframe src="assets/ht2.html" width=800 height=600 frameBorder=0></iframe>
+
+The p-value from this test was nearly 0.0 and a significane level of 0.05, which means that we __reject the null hypothesis__. 
+
+This suggests that there is a statistically significant difference in calorie content between ingredient-intensive recipes and those that require fewer ingredients. The conclusion is that ingredient-intensive recipes might have more calories than recipes with fewer ingredients.
