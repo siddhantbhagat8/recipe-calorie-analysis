@@ -47,3 +47,45 @@ The following is the distribution of the number of ingredients across all recipe
 
 The following is the distribution of the number of calories in a collection of recipes. The x-axis has been restricted to 4000 calories to eliminate extreme outliers in the dataset. The distribution shows a right-skewed pattern, indicating that most recipes have a lower calorie count, with the frequency decreasing as the calorie count increases. This suggests that recipes with very high-calorie counts are less common. The majority of the recipes seem to cluster under 500 calories and peak between 150-169.9 calories, which may indicate a tendency towards lighter or more health-conscious recipes in the dataset.
 <iframe src="assets/dist_calories.html" width=800 height=600 frameBorder=0></iframe>
+
+## Bivariate Analysis
+The following is a scatter plot visualizing the relationship between the number of ingredients in a recipe (shown on the x-axis) and the calorie content of that recipe (shown on the y-axis). Each dot represents an individual recipe, with its position determined by the number of ingredients and its caloric value. From the plot, it appears that there is a wide distribution of calorie values across recipes with varying numbers of ingredients. The recipes seem to be more concentrated in the lower range of ingredients, with fewer recipes having a high number of ingredients
+<iframe src="assets/bivariate.html" width=800 height=600 frameBorder=0></iframe>
+
+## Interesting Aggregrates
+This pivot table shows the trend of average number of ingredients and average calories per recipe from 2008-2018. It is observed that the average ingredients increase slightly by the year whereas the average calories show a linear increase towards 2018
+
+|   year |   total_recipes |   avg_n_ingredients |   avg_calories |   avg_rating |
+|-------:|----------------:|--------------------:|---------------:|-------------:|
+|   2008 |           30745 |             8.99382 |        418.853 |      4.59867 |
+|   2009 |           22547 |             9.23715 |        427.918 |      4.62367 |
+|   2010 |           11902 |             9.24668 |        416.971 |      4.64025 |
+|   2011 |            7573 |             9.26859 |        454.809 |      4.6777  |
+|   2012 |            5187 |             9.58974 |        425.329 |      4.66959 |
+|   2013 |            3792 |             9.6875  |        456.576 |      4.65719 |
+|   2014 |            1049 |             9.6387  |        478.594 |      4.60534 |
+|   2015 |             306 |            10.4935  |        452.436 |      4.69137 |
+|   2016 |             204 |             9.60294 |        538.805 |      4.52638 |
+|   2017 |             288 |            10.0139  |        743.519 |      4.47463 |
+|   2018 |             189 |            12.1534  |        979.432 |      4.60891 |
+
+The following is a line to show the linear increase in average calories per year
+<iframe src="assets/grouped_year.html" width=800 height=600 frameBorder=0></iframe>
+
+This pivot table shows the trend of average calories per the number of ingredients in a recipe as well as the total number of recipes per the number of ingredients. It is also interesting to see the maximum amount of calories a dish can have with a certain number of ingredients!
+
+|   n_ingredients |   total_recipes |   avg_calories |   min_calories |   max_calories |   avg_rating |
+|----------------:|----------------:|---------------:|---------------:|---------------:|-------------:|
+|               1 |              14 |        714.65  |            7.8 |         3590.2 |      4.86154 |
+|               2 |             747 |        331.983 |            0   |        12135.5 |      4.69258 |
+|               3 |            2342 |        306.112 |            0   |        13101.5 |      4.66203 |
+|               4 |            4481 |        336.009 |            0   |        45609   |      4.63394 |
+|               5 |            6580 |        347.801 |            0   |        17551.6 |      4.64743 |
+|               6 |            7524 |        355.885 |            0   |        17554   |      4.6331  |
+|               7 |            8515 |        391.13  |            0.7 |         8300.5 |      4.62407 |
+|               8 |            8923 |        387.032 |            1   |         9702.6 |      4.61152 |
+|               9 |            8628 |        422.505 |            0.3 |        17280.4 |      4.60638 |
+|              10 |            8033 |        449.816 |            0.7 |        18268.7 |      4.61023 |
+
+The following line plot shows the trend in number of recipes and average calories per number of ingredients
+<iframe src="assets/grouped_ingr.html" width=800 height=600 frameBorder=0></iframe>
