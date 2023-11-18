@@ -105,7 +105,7 @@ The `review` column can be made MAR by introducing another column in the datafra
 
 The selective dataframe in use has a `rating_missing` column to help conduct the test:
 |   calories |   rating | rating_missing   |
-|-----------:|---------:|:-----------------|
+|------------|----------|------------------|
 |      138.4 |        4 | False            |
 |      595.1 |        5 | False            |
 |      194.8 |        5 | False            |
